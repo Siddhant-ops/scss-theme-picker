@@ -14,36 +14,36 @@ clone this repo or download its files
 
 To Install dependencies, enter following command
 
-```pnpm i```
+`pnpm i`
 
 or
 
-```yarn i```
+`yarn i`
 
 or
 
-```npm i```
+`npm i`
 
 To generate production build
 
-```pnpm build```
+`pnpm build`
 
 or
 
-```yarn build```
+`yarn build`
 
 or
 
-```npm run build```
+`npm run build`
 
 To run in dev mode
 
-```pnpm watch```
+`pnpm watch`
 
 or
 
-```yarn watch```
+`yarn watch`
 
 or
 
-```npm run watch```
+`npm run watch`
