@@ -1,0 +1,103 @@
+@use "./themes/theme.scss" as theme;
+@use "./variables.scss" as variables;
+
+main {
+    width: 100vw;
+    max-width: 100%;
+    min-height: 100vh;
+
+    section {
+        width: 100%;
+
+        &:not(.themePicker) {
+            min-height: 100vh;
+        }
+
+        &.themePicker {
+            display: grid;
+            place-items: center;
+
+            form {
+                background: #fff;
+                border-radius: 0 0 1rem 1rem;
+                display: flex;
+                gap: 2rem;
+                padding: 1rem 3rem;
+
+                label {
+                    display: none;
+                }
+
+                input[type="radio"] {
+                    appearance: none;
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    border-radius: 50%;
+                    outline-offset: 3px;
+                    cursor: pointer;
+
+                    &#theme-blue {
+                        $radioColor: theme.theme-color("blue", "light", "primary");
+                        outline: 3px solid $radioColor;
+
+                        &:checked {
+                            background: $radioColor;
+                        }
+                    }
+                    &#theme-rose {
+                        $radioColor: theme.theme-color("rose", "light", "primary");
+                        outline: 3px solid $radioColor;
+
+                        &:checked {
+                            background: $radioColor;
+                        }
+                    }
+                    &#theme-lime {
+                        $radioColor: theme.theme-color("lime", "light", "primary");
+                        outline: 3px solid $radioColor;
+
+                        &:checked {
+                            background: $radioColor;
+                        }
+                    }
+                    &#theme-tan {
+                        $radioColor: theme.theme-color("tan", "light", "primary");
+                        outline: 3px solid $radioColor;
+
+                        &:checked {
+                            background: $radioColor;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.mockContent {
+            width: min(calc(100% - 2rem), 55rem);
+            margin-inline: auto;
+
+            .auto-grid {
+                --min-column-size: 225px;
+
+                display: grid;
+                gap: clamp(1rem, 5vmax, 1.625rem);
+                grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min-column-size)), 1fr));
+                margin-bottom: 1rem;
+
+                .card {
+                    padding: 1rem;
+                    border-block-start: 0.5rem solid var(--primary);
+                    border-radius: 0.5rem;
+                }
+
+                .card > * {
+                    margin: 0;
+                }
+
+                .card > *:not(:last-child) {
+                    margin-bottom: 0.75rem;
+                }
+            }
+        }
+    }
+}

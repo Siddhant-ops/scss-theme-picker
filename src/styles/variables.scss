@@ -1,0 +1,70 @@
+@use "./themes/theme.scss" as theme;
+
+@mixin theme-variant($theme-color: "blue", $variant: "light") {
+    --primary: #{theme.theme-color($theme-color, $variant, "primary")};
+    --on-primary: #{theme.theme-color($theme-color, $variant, "on-primary")};
+    --primary-container: #{theme.theme-color($theme-color, $variant, "primary-container")};
+    --on-primary-container: #{theme.theme-color($theme-color, $variant, "on-primary-container")};
+    --secondary: #{theme.theme-color($theme-color, $variant, "secondary")};
+    --on-secondary: #{theme.theme-color($theme-color, $variant, "on-secondary")};
+    --secondary-container: #{theme.theme-color($theme-color, $variant, "secondary-container")};
+    --on-secondary-container: #{theme.theme-color($theme-color, $variant, "on-secondary-container")};
+    --tertiary: #{theme.theme-color($theme-color, $variant, "tertiary")};
+    --on-tertiary: #{theme.theme-color($theme-color, $variant, "on-tertiary")};
+    --tertiary-container: #{theme.theme-color($theme-color, $variant, "tertiary-container")};
+    --on-tertiary-container: #{theme.theme-color($theme-color, $variant, "on-tertiary-container")};
+    --error: #{theme.theme-color($theme-color, $variant, "error")};
+    --error-container: #{theme.theme-color($theme-color, $variant, "error-container")};
+    --on-error: #{theme.theme-color($theme-color, $variant, "on-error")};
+    --on-error-container: #{theme.theme-color($theme-color, $variant, "on-error-container")};
+    --background: #{theme.theme-color($theme-color, $variant, "background")};
+    --on-background: #{theme.theme-color($theme-color, $variant, "on-background")};
+    --surface: #{theme.theme-color($theme-color, $variant, "surface")};
+    --on-surface: #{theme.theme-color($theme-color, $variant, "on-surface")};
+    --surface-variant: #{theme.theme-color($theme-color, $variant, "surface-variant")};
+    --on-surface-variant: #{theme.theme-color($theme-color, $variant, "on-surface-variant")};
+    --outline: #{theme.theme-color($theme-color, $variant, "outline")};
+    --inverse-on-surface: #{theme.theme-color($theme-color, $variant, "inverse-on-surface")};
+    --inverse-surface: #{theme.theme-color($theme-color, $variant, "inverse-surface")};
+    --inverse-primary: #{theme.theme-color($theme-color, $variant, "inverse-primary")};
+    --shadow: #{theme.theme-color($theme-color, $variant, "shadow")};
+    --surface-tint: #{theme.theme-color($theme-color, $variant, "surface-tint")};
+    --outline-variant: #{theme.theme-color($theme-color, $variant, "outline-variant")};
+    --scrim: #{theme.theme-color($theme-color, $variant, "scrim")};
+}
+
+:root:has(#theme-blue:checked) {
+    @include theme-variant("blue");
+}
+:root:has(#theme-rose:checked) {
+    @include theme-variant("rose");
+}
+:root:has(#theme-lime:checked) {
+    @include theme-variant("lime");
+}
+:root:has(#theme-tan:checked) {
+    @include theme-variant("tan");
+}
+
+// @mixin color-scheme($color-scheme: "light") {
+//     :root:has(#theme-blue:checked) {
+//         @include theme-variant("blue", $color-scheme);
+//     }
+//     :root:has(#theme-rose:checked) {
+//         @include theme-variant("rose", $color-scheme);
+//     }
+//     :root:has(#theme-lime:checked) {
+//         @include theme-variant("lime", $color-scheme);
+//     }
+//     :root:has(#theme-tan:checked) {
+//         @include theme-variant("tan", $color-scheme);
+//     }
+// }
+
+// @media (prefers-color-scheme: dark) {
+//     @include color-scheme("dark");
+// }
+
+// @media (prefers-color-scheme: light) {
+//     @include color-scheme();
+// }
